@@ -31,14 +31,20 @@ class FundamentusSpider(scrapy.Spider):
         # }
 
     def parse_detail(self, response):
+        
+        name = response.xpath('//td[2]/span/text()').extract_first()
         cotation = response.xpath('//td[@class="data destaque w3"]/span/text()').extract_first()
-        p_vp = response.xpath('//table[3]/tbody/tr[3]/td[4]/text()').extract_first()
-
+        p_vp = response.xpath('/html/body/div[1]/div[2]/table[3]/tbody/tr[2]/td[4]/span/text()').extract_first()
+        dividend_yeld = response.xpath('//tbody/tr[9]/td[4]/span/text()').extract_first()
+        
         yield {
+            "name": name,
             "cotation" : cotation,
-            "p_vp" : p_vp
-        }
+            "p_vp" : p_vp,
+            "dividend_yeld": dividend_yeld
+        }       
 
+   
         #print ( " cotation: {cotation} / p/vp: {p_vp}")
         
 
