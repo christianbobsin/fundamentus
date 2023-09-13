@@ -1,0 +1,28 @@
+1. Python e o módulos virtualenv instaldo no PC
+para instalr o virutalenv:
+> pip install virtualenv
+
+2. Criar um Ambiente para o Projeto 
+> virtualenv [nome_do_Ambiente]
+
+3. Ativar o Ambiente
+> ./Scripts/Activate
+
+4. Instalar o Scrapy no Ambiente
+(Ambiente)> pip install scrapy
+
+5. Criar o Projeto Scrapy
+> scrapy startproject [nome_projeto]
+
+6. Criar a Spider responsavel pelo web crawl (dentro do Dir do Projeto)
+> scrapy genspider [nome_spider] [url]
+
+6.1. Editar settings.py e adicionar para eviar o retono 403
+USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1"
+
+6.2 Para usar o Scrapy Shell confgurando um USER ANGET para evitar 403
+scrapy shell -s USER_AGENT="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1" "https://www.fundamentus.com.br/detalhes.php?papel=PETR4"
+
+7. Executando a Spider
+> scrapy crawl [nome_spider]
+> scrapy crawl [nome_spider] -o [nome_arquivo].json 
