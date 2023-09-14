@@ -23,6 +23,7 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like
 6.2 Para usar o Scrapy Shell confgurando um USER ANGET para evitar 403
 scrapy shell -s USER_AGENT="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1" "https://www.fundamentus.com.br/detalhes.php?papel=PETR4"
 
+
 7. Executando a Spider
 > scrapy crawl [nome_spider]
 > scrapy crawl [nome_spider] -o [nome_arquivo].json 
